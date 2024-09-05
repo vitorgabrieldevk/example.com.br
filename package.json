@@ -1,0 +1,12 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "scripts": {
+    "start:frontend": "cd site && npm run dev",
+    "start:admin": "cd admin && npx directus start",
+    "start": "concurrently \"npm run start:frontend\" \"npm run start:admin\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
