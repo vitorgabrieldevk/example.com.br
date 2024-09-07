@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: '/admin/:path*',
-        destination: 'http://127.0.0.1:8055/admin/:path*',
+        destination: 'https://127.0.0.1:8055',
       },
     ];
   },

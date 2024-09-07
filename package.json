@@ -1,12 +1,28 @@
 {
-  "name": "website",
-  "version": "1.0.0",
-  "scripts": {
-    "start:frontend": "cd site && npm run dev",
-    "start:admin": "cd admin && npx directus start",
-    "start": "concurrently \"npm run start:frontend\" \"npm run start:admin\""
-  },
-  "devDependencies": {
-    "concurrently": "^7.0.0"
+    "name": "website",
+    "version": "1.0.0",
+    "scripts": {
+        "start:frontend": "cd site && npm run dev",
+        "start:admin": "cd admin && npx directus start",
+        "start": "concurrently \"npm run start:frontend\" \"npm run start:admin\"",
+        
+        "package:frontend": "cd site && npm install",
+        "package:admin": "cd admin && npm install",
+        "package": "npm install && npx concurrently \"npm run package:frontend\" \"npm run package:admin\" && npm run start",
+        
+        "audit:frontend": "cd site && npm audit && npm audit fix",
+        "audit:admin": "cd admin && npm audit && npm audit fix",
+        "audit": "npx concurrently \"npm run audit:frontend\" \"npm run audit:admin\"",
+        
+        "update:frontend": "cd site && npm outdated && npm update",
+        "update:admin": "cd admin && npm outdated && npm update",
+        "update": "npx concurrently \"npm run update:frontend\" \"npm run update:admin\"",
+
+        "clean": "rm -rf node_modules && npm cache clean --force",
+        "reinstall": "npm run clean && npm install"
+    },
+    "devDependencies": {
+      "concurrently": "^7.0.0"
+    }
   }
-}
+  
