@@ -10,21 +10,16 @@ interface LayoutProps {
 
 export default function RootLayout({
   children,
-  metadata,
-}: LayoutProps) {
-  const defaultMetadata: Metadata = {
+  metadata = {
     title: 'TESTE',
     description: 'Página de Demonstração',
-  };
-
-  // Merge metadata with default values
-  const finalMetadata = { ...defaultMetadata, ...metadata };
-
+  },
+}: LayoutProps) {
   return (
     <html lang="pt-br">
       <head>
-        <title>{finalMetadata.title}</title>
-        <meta name="description" content={finalMetadata.description} />
+        <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description} />
       </head>
       <body>
         {children}
