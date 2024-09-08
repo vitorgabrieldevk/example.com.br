@@ -1,6 +1,7 @@
 // app/layout.tsx
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
+import Head from 'next/head';
 
 export default function RootLayout({
   children,
@@ -9,10 +10,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <head>
-        <title>Seu Título Padrão</title>
-        <meta name="description" content="Descrição padrão da página" />
-      </head>
       <body>
         {children}
       </body>

@@ -1,13 +1,17 @@
 // app/sobre/page.tsx
-import RootLayout from "../layout";
+import Head from 'next/head';
 
 export default function Sobre() {
   return (
-    <RootLayout>
-      <div className="container">
-        <h1>Sobre Nós</h1>
-        <p>Bem-vindo à página sobre nós!</p>
-      </div>
-    </RootLayout>
+    <>
+      <Head>
+        <title>Página Sobre - Seu Site</title>
+        <meta name="description" content="Descrição da Página Sobre" />
+      </Head>
+      <main>
+        <h1>Bem-vindo à Página Sobre!</h1>
+        {/* Conteúdo da Página */}
+      </main>
+    </>
   );
 }
