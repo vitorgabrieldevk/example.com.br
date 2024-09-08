@@ -1,7 +1,6 @@
 // app/layout.tsx
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './globals.css';
-import { Analytics } from "@vercel/analytics/react"
 
 export default function RootLayout({
   children,
