@@ -1,25 +1,17 @@
-// src/app/layout.tsx
-import type { Metadata } from 'next';
+// app/layout.tsx
+import type { Metadata } from "next";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './globals.css';
-
-interface LayoutProps {
-  children: React.ReactNode;
-  metadata?: Metadata;
-}
+import "./globals.css";
 
 export default function RootLayout({
   children,
-  metadata = {
-    title: 'TESTE',
-    description: 'Página de Demonstração',
-  },
-}: LayoutProps) {
+}: {
+  children: React.ReactNode;
+  metadata?: Metadata;
+}) {
   return (
     <html lang="pt-br">
       <head>
-        <title>{metadata.title}</title>
-        <meta name="description" content={metadata.description} />
       </head>
       <body>
         {children}
