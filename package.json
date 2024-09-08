@@ -5,6 +5,10 @@
         "start:frontend": "cd site && npm run dev",
         "start:admin": "cd admin && npx directus start",
         "start": "concurrently \"npm run start:frontend\" \"npm run start:admin\"",
+
+        "build:site": "cd site && npm run build",
+        "build:admin": "cd admin && npx directus build",
+        "build": "npm run build:site && npm run build:admin",
         
         "package:frontend": "cd site && npm install",
         "package:admin": "cd admin && npm install",
@@ -19,8 +23,10 @@
         "update": "npx concurrently \"npm run update:frontend\" \"npm run update:admin\"",
 
         "clean": "rm -rf node_modules && npm cache clean --force",
-        "reinstall": "npm run clean && npm install"
-    },
+        "reinstall": "npm run clean && npm install",
+
+        "clean:all": "rmdir /s /q node_modules site\\node_modules admin\\node_modules && npm cache clean --force"
+      },
     "devDependencies": {
       "concurrently": "^7.0.0"
     }
